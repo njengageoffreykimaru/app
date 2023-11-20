@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fertilizer Recommendation</title>
+</head>
+<body>
+    <h1>Fertilizer Recommendation</h1>
+     <form method="POST" action="/predict">
+        <label for="nitrogen">Nitrogen:</label>
+        <input type="text" name="nitrogen" id="nitrogen"><br>
+
+        <label for="potassium">Potassium:</label>
+        <input type="text" name="potassium" id="potassium"><br>
+
+        <label for="phosphorous">Phosphorous:</label>
+        <input type="text" name="phosphorous" id="phosphorous"><br>
+
+        <input type="submit" value="Predict">
+    </form>
+     <!-- Display the error message if it exists -->
+
+
+
+      {% if prediction %}
+    <h2>Prediction:</h2>
+    <p>The recommended fertilizer is: {{ prediction }}</p>
+    {% endif %}
+</body>
+</html>

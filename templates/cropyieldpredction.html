@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Yield Prediction</title>
+</head>
+<body>
+    <h1>Crop Yield Prediction</h1>
+
+    <form method="post" action="/yieldpredict">
+        <label for="Temperature">Temperature:</label>
+        <input type="text" name="Temperature" id="Temperature" required><br>
+
+        <label for="humidity">Humidity:</label>
+        <input type="text" name="humidity" id="humidity" required><br>
+
+        <label for="soil moisture">Soil Moisture:</label>
+        <input type="text" name="soil moisture" id="soil moisture" required><br>
+
+        <label for="area">Area:</label>
+        <input type="text" name="area" id="area" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if prediction %}
+    <p><strong>Prediction:</strong> {{ prediction }}<strong>grams</strong></p>
+    {% endif %}
+</body>
+</html>
